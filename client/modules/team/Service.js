@@ -11,7 +11,7 @@ export default class TeamService
 
 	getTeams() 
 	{
-
+		// return all exist teams
 	}
 }
 
