@@ -5,12 +5,38 @@ import watch from 'gulp-watch';
 import gutil from 'gulp-util';
 import changed from 'gulp-changed';
 import nodemon from 'gulp-nodemon';
+import webpack from 'webpack-stream';
+import browserSync from 'browser-sync'
 
- const SOURCE = './client/**/*',
+ const SOURCE = '../client/**/*',
  SOURCE_JS = './client/**/*.js',
  SOURCE_IGNORE_JS = '!./client/**/*.js',
  TARGET_CLIENT = './build/client';
 
+ let webpackClientFiles = (watch = false) => {
+ 	let src = ['public/**/*.module.js'];
+ 	let wp = webpack({
+ 		watch: false,
+ 		module: {
+ 			loaders: [{
+ 				test: /\.js$/,
+ 				loaders: ['babel-loader?presets[]=es2015', 'eslint-loader']
+ 			}]
+ 		},
+ 		output: { filename: 'index.module.js'}
+ 	}, 
+ 	null, 
+ 	() => {
+ 		browserSync.reload();
+ 	}).on('error', (err) => {
+ 		console.log(err.message);
+ 		console.log(err.stack);
+ 		wp.emit('end');
+ 	});
+ 	return gulp.src(src)
+ 		.pipe(wp)
+ 		.pipe(gulp.dest(SOURCE));
+ }
   //watch files client
  let files_web = ['./client/**/*.html',
  	'./client/**/*.json',
@@ -30,7 +56,8 @@ gulp.task('copy:client', () => {
 });
 
 gulp.task('compile:client', () => {
- 	return compile(SOURCE_JS, TARGET_CLIENT);
+ 	//return compile(SOURCE_JS, TARGET_CLIENT);
+ 	return webpackClientFiles(false);
 });
 
 gulp.task('watch:client-assets', () => {
