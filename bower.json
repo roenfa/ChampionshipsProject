@@ -1,0 +1,17 @@
+{
+  "name": "Championship",
+  "description": "Championship",
+  "main": "server.js",
+  "authors": [
+    "Julio Cesar Quispe <julio.quispe@jalasoft.com>"
+  ],
+  "license": "MIT",
+  "homepage": "/client",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
