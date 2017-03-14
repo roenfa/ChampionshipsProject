@@ -6,15 +6,15 @@ import gutil from 'gulp-util';
 import changed from 'gulp-changed';
 import nodemon from 'gulp-nodemon';
  
- const SOURCE = './server/**/*',
- SOURCE_JS = './server/**/*.js',
- SOURCE_IGNORE_JS = '!./server/**/*.js',
+ const SOURCE = './src/server/**/*',
+ SOURCE_JS = './src/server/**/*.js',
+ SOURCE_IGNORE_JS = '!./src/server/**/*.js',
  TARGET_SERVER = './build/server';
 
  //watch files server
- let files_web = ['./server/**/*.html',
- 	'./server/**/*.json',
- 	'./server/**/*.css',
+ let files_web = ['./src/server/**/*.html',
+ 	'./src/server/**/*.json',
+ 	'./src/server/**/*.css',
  	SOURCE_IGNORE_JS
  ];
 

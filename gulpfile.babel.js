@@ -1,18 +1,18 @@
 import fs from 'fs';
 import gulp from 'gulp';
-import sass from 'gulp-sass';
+//import sass from 'gulp-sass';
 
-gulp.task('styles', function() {
+/*gulp.task('styles', function() {
     gulp.src('*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./assets/css/'));
-});
+});*/
 
 //Watch task
-gulp.task('compile_sass',function() {
+/*gulp.task('compile_sass',function() {
     gulp.watch('*.scss',['styles']);
 });
-
+*/
 
 fs.readdirSync('./gulp_tasks').filter(function(file){
 	return (/\.(js)$/i).test(file);
