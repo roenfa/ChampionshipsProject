@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import DbManager from './core/database';
 import Team from './modules/team';
+import path from 'path';
 
 export default class App {
 	constructor(config) {
@@ -14,6 +15,7 @@ export default class App {
 		app.set('port', config.appPort);
 		app.use(bodyParser.urlencoded({ extended: false }));
 		app.use(bodyParser.json());
+		app.use(express.static(path.join(__dirname, config.publicPath)));
 
 	}
 

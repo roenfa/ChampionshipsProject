@@ -77,7 +77,7 @@ gulp.task('nodemon', () => {
 	});
 });
 
-gulp.task('build:server-test', [
+gulp.task('build:server', [
 	'copy:server',
 	'compile:server'
 ]);

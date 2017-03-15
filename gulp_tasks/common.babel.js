@@ -8,6 +8,6 @@ gulp.task('clean', () => {
 });
 
 
-gulp.task('develop', ['build:client-test'], () => {
-	gulp.start('watch:client');
+gulp.task('develop', ['build:server'], () => {
+	gulp.start('watch:server');
 });

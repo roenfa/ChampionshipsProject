@@ -8,13 +8,13 @@ import nodemon from 'gulp-nodemon';
 import webpack from 'webpack-stream';
 import browserSync from 'browser-sync'
 
- const SOURCE = '../client/**/*',
- SOURCE_JS = './client/**/*.js',
- SOURCE_IGNORE_JS = '!./client/**/*.js',
+ const SOURCE = './src/client/**/*',
+ SOURCE_JS = './src/client/**/*.js',
+ SOURCE_IGNORE_JS = '!./src/client/**/*.js',
  TARGET_CLIENT = './build/client';
 
  let webpackClientFiles = (watch = false) => {
- 	let src = ['public/**/*.module.js'];
+ 	let src = ['client/**/*.module.js'];
  	let wp = webpack({
  		watch: false,
  		module: {
