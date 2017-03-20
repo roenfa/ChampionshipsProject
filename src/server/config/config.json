@@ -8,7 +8,7 @@
       "secret": "JjKxJJ7RAj2x4cp5clvHaw==",
       "expiration": "2d"
     },
-    "publicPath": "../public",
+    "publicPath": "../client",
     "logLevel": "DEBUG",
     "asset": {
       "uploadDir": "../../files",

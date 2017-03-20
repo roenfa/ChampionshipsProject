@@ -14,7 +14,7 @@ import browserSync from 'browser-sync'
  TARGET_CLIENT = './build/client';
 
  let webpackClientFiles = (watch = false) => {
- 	let src = ['client/**/*.module.js'];
+ 	let src = ['src/client/**/*.module.js'];
  	let wp = webpack({
  		watch: false,
  		module: {
@@ -91,7 +91,7 @@ gulp.task('watch:client', [
 	'watch:client-resource'
 ]);
 
-gulp.task('build:client-test', [
+gulp.task('build:client', [
 	'copy:client',
 	'compile:client'
 ]);

@@ -1,0 +1,30 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "rules": {
+    "no-console": [2, { "allow": ["info", "error"] }],
+    "max-len": [2, 100, 2, {"ignoreComments": true, "ignoreUrls": true}],
+    "semi": ["error", "always", { "omitLastInOneLineBlock": true}],
+    "space-before-function-paren": [2, { "anonymous": "never", "named": "never" }],
+    "indent": ["error", 4],
+    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
+    "valid-jsdoc": ["error", { "requireReturn": false }],
+    "arrow-parens": ["error", "always"],
+    "prefer-arrow-callback": "error"
+  },
+  "globals": {
+    "require" : false,
+    "console" : false,
+    "__dirname" : true
+  },
+  "environment": {
+    "browser": true,
+    "es6": true
+  }
+}
