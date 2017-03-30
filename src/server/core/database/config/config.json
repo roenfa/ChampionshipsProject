@@ -1,6 +1,6 @@
 {
   "develop": {
-    "uri": "mongodb://localhost/",
+    "uri": "mongodb://localhost:27017",
     "nameDataBase": "Champion",
     "options": {
       "db": {

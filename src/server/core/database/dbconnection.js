@@ -12,24 +12,24 @@ export default class DbConnection {
 
 	connect() {
 		return new Promise((response, reject) => {
-			//mongoose.connect(this.urlConnection);
-			/*mongoose.connection.on('connected', () => {
+			mongoose.connect(this.urlConnection);
+			mongoose.connection.on('connected', () => {
 				console.log('connect to database');
 				response(true);
 			});
 			mongoose.connection.on('error', (err) => {
 				console.log('Open connection is fail');
 				reject(true);
-			});*/
+			});
 			response(true);
 		});
 	}
 
 	disconnect() {
 		return new Promise((response, reject) => {
-			/*mongoose.disconnect(() => {
+			mongoose.disconnect(() => {
 				response(true);
-			});*/
+			});
 			response(true);
 		});
 	}

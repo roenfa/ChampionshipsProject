@@ -8,6 +8,11 @@ export default class Api {
 			res.send('team');
 		});
 
+		apiMain.route('/test')
+		.get((req, res) => {
+			res.send('test');
+		});
+
 
 	} 
 

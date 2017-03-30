@@ -7,11 +7,15 @@ import changed from 'gulp-changed';
 import nodemon from 'gulp-nodemon';
 import webpack from 'webpack-stream';
 import browserSync from 'browser-sync'
+import spa from 'browser-sync-spa';
 
  const SOURCE = './src/client/**/*',
  SOURCE_JS = './src/client/**/*.js',
  SOURCE_IGNORE_JS = '!./src/client/**/*.js',
- TARGET_CLIENT = './build/client';
+ TARGET_CLIENT = './build/client',
+ DEPENDENCIES_IGNORE_LIBRARIES  = '!./src/client/libs/**/*',
+ SOURCE_DEPENDENCIES_LIBRARIES = './src/client/libs/**/*',
+ TARGET_DEPENDENCIES_LIBRARIES = './build/client/libs';
 
  let webpackClientFiles = (watch = false) => {
  	let src = ['src/client/**/*.module.js'];
@@ -38,10 +42,12 @@ import browserSync from 'browser-sync'
  		.pipe(gulp.dest(SOURCE));
  }
   //watch files client
- let files_web = ['./client/**/*.html',
- 	'./client/**/*.json',
- 	'./client/**/*.scss',
- 	SOURCE_IGNORE_JS
+ let files_web = ['./src/client/**/*.html',
+ 	'./src//client/**/*.json',
+ 	'./src/client/**/*.scss',
+ 	SOURCE_IGNORE_JS,
+ 	DEPENDENCIES_IGNORE_LIBRARIES
+
  ];
 
  let compile = (source, target) => {
@@ -53,6 +59,11 @@ import browserSync from 'browser-sync'
 gulp.task('copy:client', () => {
 	return gulp.src([SOURCE, SOURCE_IGNORE_JS])
 		.pipe(gulp.dest(TARGET_CLIENT));
+});
+
+gulp.task('copy:dependencies', () => {
+	return gulp.src([SOURCE_DEPENDENCIES_LIBRARIES])
+		.pipe(gulp.dest(TARGET_DEPENDENCIES_LIBRARIES));
 });
 
 gulp.task('compile:client', () => {
@@ -68,7 +79,7 @@ gulp.task('watch:client-assets', () => {
 
 //Watch client js files
 gulp.task('watch:client-resource', ()=> {
-	gulp.watch(SOURCE_JS, ['sync:client-resource']);
+	gulp.watch([SOURCE_JS, DEPENDENCIES_IGNORE_LIBRARIES], ['compile:client']);
 });
 
 gulp.task('sync:client-resource', () => {
@@ -84,15 +95,35 @@ gulp.task('sync:client-resource', () => {
 		.pipe(babelWatch)
 		.pipe(gulp.dest(TARGET_CLIENT));
 });
+gulp.task('browser-sync', () => {
+    console.info('BrowserSync config is loading..');
+    browserSync.use(spa({
+        selector: '[ng-app]'
+    }));
+
+    browserSync({
+        open: false,
+        files: [
+            'build/public/**/*.js',
+            'build/public/**/*.css',
+            'build/public/**/*.json',
+            'build/public/**/*.html'
+        ],
+        https: false
+    });
+});
+
 //----------------------------------------------------------
 
 gulp.task('watch:client', [
 	'watch:client-assets',
-	'watch:client-resource'
+	'watch:client-resource',
+	'browser-sync'
 ]);
 
 gulp.task('build:client', [
 	'copy:client',
+	'copy:dependencies',
 	'compile:client'
 ]);
 
