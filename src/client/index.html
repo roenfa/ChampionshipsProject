@@ -3,6 +3,18 @@
 <head>
 	<title>Championships Application</title>
 
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+	<!-- Materialize CSS -->
+    <link rel="stylesheet" href="libs/materialize/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+
+    <!-- JavaScript for: jQuery, angular, materialize, and angular-materialize. All of which are needed. -->
+    <script type="text/javascript" src="libs/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="libs/angular/angular.min.js"></script>
+    <script type="text/javascript" src="libs/materialize/materialize.min.js"></script>
+    <script type="text/javascript" src="libs/materialize/angular-materialize.min.js"></script>
+
+
   	<!-- libs -->
 
 
@@ -10,42 +22,51 @@
 </head>
 <body>
 	<div class="header-section">
-		<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
-            sfsdfsd
-        </md-sidenav>
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<div class="logo-link navbar-header">
-      				<a href="/es/login"><img src="assets/img/logo_championships.png" /></a>
-    			</div>
-    			<div class="navbar-login">
-    				<div class="collapse navbar-collapse" id="navbar-collapse-1">
-				    <!--<form class="navbar-form navbar-left">
-				        <div class="form-group">
-				          <input type="text" class="form-control" placeholder="Search">
-				    	</div>
-				        <button type="submit" class="btn btn-default">Submit</button>
-				    </form>-->
-				      	<ul class="nav navbar-nav navbar-top-links navbar-right">
-				        	<li><div id="access-icon"></div></li>
-				        	<li><a href="#">Acceder</a></li>
-				        	<li><div id="register-icon"></div></li>
-				        	<li><a href="#">Registrarse</a></li>	
-				      	</ul>
-					</div><!-- /.navbar-collapse -->
-    			</div>			
-				
-			</div><!-- /.container-fluid -->
-		</nav>	
+		<nav class="nav-extended">
+		    <div class="nav-wrapper">
+		      <a href="#" src="/assets/img/logo_championships.png" class="brand-logo center">Logo</a>
+		      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		      	<li><a href="#"><i class="material-icons">search</i></a></li>
+		        <li class="tab"><a class="active" href="#team-form">Create Team</a></li>
+		        <li class="tab"><a href="#scheduler-form">Add Schedulers</a></li>
+		      </ul>
+		      <ul class="side-nav" id="mobile-demo">
+		        <li><a href="#team-form">Create Team</a></li>
+		        <li><a href="#scheduler-form">Add Schedulers</a></li>
+		      </ul>
+		    </div>
+
+		    <div class="nav-content">
+			    <ul class="tabs tabs-transparent">
+			        <li><a href="#test1"><i class="material-icons left">perm_identity</i>Acceder</a></li>
+			        <li><a href="#team-form">Apuntate</a></li>
+			        <li><a href="#test3">Espaniol</a></li>
+			        <li><a href="#test4">Ingles</a></li>
+	      		</ul>
+		    </div>
+  		</nav>
 	</div>
 	
 	<div class="content-section">
-		<div class="advertisements-section">
-			<h2>Publishment <span class="label label-default">Schedules</span></h2>
-		</div>
-		<div class="create-championship-section">
-			<h2><span class="label label-default">Create a Championship</span></h2>
-		</div>
+		<!--<div id="team-form" class="col s12">Form - Create team</div>-->
+		<div class="row">
+                <form class = "col s12 m4 offset-m4 l4 offset-l4">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix sKtq-scColor">supervisor_account</i>
+                            <input id="icon_prefix" type="text" class="validate sKtq-scColor">
+                            <label for="icon_prefix" class = "sKtq-scColor">Team name</label>
+                        </div>
+                    </div>
+                    <div class = "center-align">
+                        <button class="btn waves-effect waves-light sKtq-bgScColor" type="submit" name="action">Send
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </form>
+  </div>
+		<!--<div id="scheduler-form" class="col s12">Form - Create Schedulers</div>-->
 	</div>
 </body>
 </html>
