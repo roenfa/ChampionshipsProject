@@ -5,65 +5,21 @@
 
 	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 	<!-- Materialize CSS -->
-    <link rel="stylesheet" href="/libs/materialize/materialize.min.css">
+    <!--<link rel="stylesheet" href="/libs/materialize/materialize.min.css">-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
-
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/libs/angular-material/angular-material.css">
     <!-- JavaScript for: jQuery, angular, materialize, and angular-materialize. All of which are needed. -->
-    <script type="text/javascript" src="/libs/jquery/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/libs/angular/angular.min.js"></script>
-    <script type="text/javascript" src="/libs/materialize/materialize.min.js"></script>
-    <script type="text/javascript" src="/libs/materialize/angular-materialize.min.js"></script>
-
+    <script src="/libs/angular-aria/angular-aria.js"></script>
+	<script src="/libs/angular-animate/angular-animate.js"></script>
+	<script src="/libs/angular-material/angular-material.js"></script>
+	<script type="text/javascript" src="/libs/jquery/dist/jquery.js"></script>
 
   	<!-- libs -->
 </head>
 <body>
-	<div class="header-section">
-		<nav class="nav-extended">
-		    <div class="nav-wrapper">
-		      <a href="#" src="/assets/img/logo_championships.png" class="brand-logo center">Logo</a>
-		      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-		      <ul id="nav-mobile" class="right hide-on-med-and-down">
-		      	<li><a href="#"><i class="material-icons">search</i></a></li>
-		        <li class="tab"><a class="active" href="#team-form">Create Team</a></li>
-		        <li class="tab"><a href="#scheduler-form">Add Schedulers</a></li>
-		      </ul>
-		      <ul class="side-nav" id="mobile-demo">
-		        <li><a href="#team-form">Create Team</a></li>
-		        <li><a href="#scheduler-form">Add Schedulers</a></li>
-		      </ul>
-		    </div>
-
-		    <div class="nav-content">
-			    <ul class="tabs tabs-transparent">
-			        <li><a href="#test1"><i class="material-icons left">perm_identity</i>Acceder</a></li>
-			        <li><a href="#team-form">Apuntate</a></li>
-			        <li><a href="#test3">Espaniol</a></li>
-			        <li><a href="#test4">Ingles</a></li>
-	      		</ul>
-		    </div>
-  		</nav>
-	</div>
-	
-	<div class="content-section">
-		<!--<div id="team-form" class="col s12">Form - Create team</div>-->
-		<div class="row">
-                <form class = "col s12 m4 offset-m4 l4 offset-l4">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix sKtq-scColor">supervisor_account</i>
-                            <input id="icon_prefix" type="text" class="validate sKtq-scColor">
-                            <label for="icon_prefix" class = "sKtq-scColor">Team name</label>
-                        </div>
-                    </div>
-                    <div class = "center-align">
-                        <button class="btn waves-effect waves-light sKtq-bgScColor" type="submit" name="action">Send
-                            <i class="material-icons right">send</i>
-                        </button>
-                    </div>
-                </form>
-  </div>
-		<!--<div id="scheduler-form" class="col s12">Form - Create Schedulers</div>-->
-	</div>
+	<div class="digital-signage" ui-view>
+        </div>
 </body>
 </html>
