@@ -1,9 +1,10 @@
 import AppController from './controllers/appController';
 import routerConfig from './app.routes';
+import championshipModule from './modules/championship/championship.module';
 
-angular.module('Champions', [
+angular.module('appChampionship', [
 	'ui.router',
-	'ngMaterial'
+	'ngMaterial',
 ])
-.controller('AppController', AppController)
-.config(routerConfig);
+	.controller('AppController', AppController)
+	.config(routerConfig);

@@ -1,4 +1,9 @@
-/* this is the model file for Team module*/
-/*
-angular.module('teamModule', [])
-	.controller('TeamController', TeamController )*/
+
+import TeamController from './championship.controller';
+import CreateTeamController from './team/create/create-team.controller';
+let championshipModule = angular.module('championship', [
+
+]);
+
+championshipModule.controller('TeamController', TeamController);
+championshipModule.controller('CreateTeamController', CreateTeamController);

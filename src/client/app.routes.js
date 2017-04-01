@@ -9,9 +9,9 @@ export default function routerConfig($stateProvider, $urlRouterProvider) {
 			ControllerAs: 'main',
 		})
 		.state('team', {
-			url: 'team'
-			templateUrl: 'championship/team/create/create-team.html'
-			controller: 'TeamController'
-			ControllerAs: 'team'
+			url: 'team',
+			templateUrl: 'championship/team/create/create-team.html',
+			controller: 'TeamController',
+			ControllerAs: 'team',
 		})
 }
