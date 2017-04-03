@@ -39,7 +39,7 @@ import spa from 'browser-sync-spa';
  	});
  	return gulp.src(src)
  		.pipe(wp)
- 		.pipe(gulp.dest(SOURCE));
+ 		.pipe(gulp.dest(TARGET_CLIENT));
  }
   //watch files client
  let files_web = ['./src/client/**/*.html',

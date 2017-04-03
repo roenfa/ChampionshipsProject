@@ -1,0 +1,80 @@
+<md-toolbar class="md-theme-light">
+    <div class="md-toolbar-tools">
+        <a ui-sref="main">
+            <span>Digital Signage</span>
+        </a>
+        <md-menu-bar>
+            <md-menu>
+                <button id="crudusers-menuroute-button" ng-click="$mdOpenMenu()" class="md-button">
+                    <ng-md-icon icon="reorder"></ng-md-icon>
+                    <span>{{ 'main.SETTINGS' | translate }}</span>
+                </button>
+                <md-menu-content>
+                    <md-menu-item>
+                        <md-button id="crudusers-routeusers-button"
+                                   ng-click="main.changeRoute('users')"
+                                   aria-label="users">
+                                   {{ 'main.USERS' | translate }}
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button id="crudresource-routeresource-button"
+                                   ng-click="main.changeRoute('assets')"
+                                   aria-label="assets">
+                                   {{ 'main.ASSETS' | translate }}
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button id="crudagents-routeresource-button"
+                                   ng-click="main.changeRoute('agents')"
+                                   aria-label="agents">
+                            {{ 'main.AGENTS' | translate }}
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button id="crudplaylist-routeresource-button"
+                                   ng-click="main.changeRoute('playlist')"
+                                   aria-label="playlist">
+                                   {{ 'main.PLAYLIST' | translate }}
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </md-menu-bar>
+        <span flex></span>
+        <md-menu md-offset="0 -5" md-position-mode="target-right target">
+            <md-button id="login-menuprofile-button" aria-label="Open demo menu"
+                       ng-click="main.openMenu($mdOpenMenu, $event)">
+                <ng-md-icon icon="person"></ng-md-icon>
+                    {{main.user.name}}
+            </md-button>
+            <md-menu-content width="3">
+                <md-menu-item>
+                    <md-button id="login-menuitemprofile-button"
+                               aria-label="Profile menu option"
+                               ng-click="main.announceClick('profile')">
+                        <div layout="row" flex>
+                            <p flex>{{ 'main.PROFILE' | translate }}</p>
+                            <ng-md-icon icon="person"></ng-md-icon>
+                        </div>
+                    </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-menu-item>
+                    <md-button id="login-logout-button"
+                               aria-label="Logout menu option"
+                               ng-click="main.announceClick('logout')">
+                        <div layout="row" flex>
+                            <p flex>{{ 'main.LOG_OUT' | translate }}</p>
+                            <ng-md-icon icon="power_settings_new"></ng-md-icon>
+                        </div>
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+        <md-button class="md-icon-button" aria-label="more_vert">
+            <ng-md-icon icon="more_vert"></ng-md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+<ui-view>
+</ui-view>
