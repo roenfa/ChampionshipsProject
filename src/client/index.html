@@ -22,9 +22,17 @@
 </head>
 <body ng-app="Champions">
 	<a ui-sref="main">Test</a>
-	<md-toolbar layout="row" class="md-toolbar-tools">
-      <h1>Angular Material - Starter App</h1>
+	<md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+          <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        </md-button>
+
+        <h2 flex md-truncate>Create a Championship online</h2>
+
+      </div>
     </md-toolbar>
+
 	<div class="digital-signage" ui-view>
     </div>
 </body>
