@@ -6,7 +6,7 @@ export default class AppController
 {
 	constructor($scope, $state) 
 	{
-		console.log('test');
+		//console.log('test');
 		this.state = $state;
 	}
 
