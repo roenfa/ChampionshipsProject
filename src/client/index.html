@@ -21,7 +21,8 @@
     <script type="text/javascript" src="index.module.js"></script>
 </head>
 <body ng-app="appChampionship">
-	<a ui-sref="main">Test</a>
+	<a ui-sref="hello">Test</a>
+    <a ui-sref="team">Team</a>
 	<md-toolbar class="md-hue-2">
       <div class="md-toolbar-tools">
         <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
@@ -33,7 +34,7 @@
       </div>
     </md-toolbar>
 
-	<div class="digital-signage" ui-view>
+	<div ui-view>
     </div>
 </body>
 </html>
