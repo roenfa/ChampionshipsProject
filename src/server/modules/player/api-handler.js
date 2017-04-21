@@ -20,5 +20,13 @@ export default class ApiHandler {
                 }
             });
 	}
+
+    static getPlayers(req, res, next) {
+        console.log("request player");
+        debugger;
+        playerAdapter.findAll({})
+        .then((data) => { res.json(data) })
+        .catch((err) => { next(err) });
+    }
 	
 }

@@ -1,5 +1,4 @@
 import ModelManager from '../model-manager';
-
 /**
  * Generic adapter.
  */

@@ -12,4 +12,5 @@ const playerSchema = new mongoose.Schema({
 });
 
 let Player = mongoose.model('Player', playerSchema);
-export default Team;
+console.log('PLayer Schemma');
+export default Player;

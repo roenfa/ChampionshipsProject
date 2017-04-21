@@ -1,10 +1,10 @@
 import ApiHandler from './api-handler';
 
-export default class ApiPlayer {
+export default class Api {
 
-	static regiterModule(apiMain) {
-		apiProtected = apiMain;
+	static registerModule(apiMain) {
+		let apiProtected = apiMain.routerWithoutAuthentication;		
 		apiProtected.route('/player')
-		.post(ApiHandler.addPlayer);
+		.get(ApiHandler.getPlayers);
 	}
 }

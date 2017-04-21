@@ -7,11 +7,16 @@ export default class ModelLoader {
 	}
 
 	loadModels() {
-		let index, name, models;
+		var index, name, models;
+		console.log('load models-----------------', this.pathModels);
 		try {
 			models = fs.readdirSync(this.pathModels);
-			for(index = 0; index < models.legth; index++) {
+			console.log('models>>>>>>>>>>', models,  models.length);
+			console.log(models.length);
+			for(index = 0; index < models.length; index += 1) {
 				name = (path.parse(models[index])).name;
+				console.log('load model----->',index, name);
+				console.log('load model', name);
 				require(this.pathModels + '/' + name);
 			}
 		}
