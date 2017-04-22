@@ -4,7 +4,7 @@ import DbManager from './core/database';
 import Team from './modules/team';
 import Player from './modules/player';
 import path from 'path';
-
+import ErrorHandler from './core/utils/error-handler';
 export default class App {
 	constructor(config) {
 		this.appServer = express();
@@ -30,6 +30,14 @@ export default class App {
 		this.mainRouter.routerWithAuthentication = express.Router();
 		app.use('/api/v1', this.mainRouter.routerWithAuthentication);
 		app.use('/api/v1', this.mainRouter.routerWithoutAuthentication);
+		app.use('/*', ErrorHandler.httpError(400));
+		app.use((err, req, res,next) => {
+			let status = err.status || 500;
+			if(status === 500) {
+				console.log(err.stack);
+			}
+			res.status(status).json({'message': err.message});
+		});	
 	}
 
 	getAppServer() {

@@ -1,7 +1,7 @@
 {
   "develop": {
     "uri": "mongodb://localhost:27017",
-    "nameDataBase": "Champion",
+    "nameDataBase": "champion",
     "options": {
       "db": {
         "native_parser": true

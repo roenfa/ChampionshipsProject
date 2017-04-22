@@ -8,7 +8,6 @@ const ORDER_BY_DEFAULT = {
 }
 export default class ModelManager {
 	constructor(modelName) {
-		console.log('mooogose---> manager', modelName)
 		this.model = mongoose.model(modelName);
 	}
 

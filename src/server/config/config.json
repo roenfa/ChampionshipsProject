@@ -2,7 +2,7 @@
   "server": {
     "name": "Digital Signage 2.0",
     "agentHost": "localhost",
-    "appPort": "7002",
+    "appPort": "7003",
     "protocol": "http",
     "session": {
       "secret": "JjKxJJ7RAj2x4cp5clvHaw==",
