@@ -21,13 +21,17 @@ export default class AdapterFactory {
         let files, name;
         try {
             files = fs.readdirSync(__dirname + '/adapter');
+            console.log("LOADDD--->Adpter", files);
             files.forEach((file) => {
                 name = (path.parse(file)).name;
                 if (name.indexOf('.spec') === -1) {
+                    console.log("LOADDD--->", name);
                     this.adapters[name] = require(pathAdapters + '/' + name);
+                    console.log("After LOADDD--->", name);
                 }
             });
         } catch (error) {
+            console.error(error);
         }
     }
 
@@ -40,15 +44,18 @@ export default class AdapterFactory {
         let GenericAdapter,
             SpecificAdapter,
             adapter = null;
+            console.log('Get Adapter->>>',nameAdapter,this.adapters);
         try {
             if (this.adapters[nameAdapter]) {
                 SpecificAdapter = this.adapters[nameAdapter].default;
                 adapter = new SpecificAdapter();
             } else {
                 GenericAdapter = this.adapters[GENERIC].default;
+                console.log('New Adapter->>>',nameAdapter,this.adapters);    
                 adapter = new GenericAdapter(nameAdapter);
             }
         } catch (error) {
+            console.error('get adapter error: ', error);
         }
         return adapter;
     }

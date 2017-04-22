@@ -1,6 +1,6 @@
-import moogse from 'mongoose';
+import mongoose from 'mongoose';
 import _ from 'lodash';
-import Tools from './utils/tools';
+import Tools from '../utils/tools';
 
 const NOT_FOUND = 'Element not exist stored';
 const ORDER_BY_DEFAULT = {
@@ -8,6 +8,7 @@ const ORDER_BY_DEFAULT = {
 }
 export default class ModelManager {
 	constructor(modelName) {
+		console.log('mooogose---> manager', modelName)
 		this.model = mongoose.model(modelName);
 	}
 

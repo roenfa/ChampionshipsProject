@@ -9,5 +9,5 @@ gulp.task('clean', () => {
 
 
 gulp.task('develop', ['build:server', 'build:client'], () => {
-	gulp.start('watch:server', 'watch:client');
+	gulp.start('watch:server','watch:client');
 });
