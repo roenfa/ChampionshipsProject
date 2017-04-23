@@ -21,8 +21,6 @@
     <script type="text/javascript" src="index.module.js"></script>
 </head>
 <body ng-app="appChampionship">
-	<a ui-sref="hello">Test</a>
-    <a ui-sref="team">Team</a>
 	<md-toolbar class="md-hue-2">
       <div class="md-toolbar-tools">
         <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
@@ -35,6 +33,8 @@
     </md-toolbar>
 
 	<div ui-view>
-    </div>
+    <a ui-sref="hello">Test</a>
+    <a ui-sref="club">Club</a>
+  </div>
 </body>
 </html>
