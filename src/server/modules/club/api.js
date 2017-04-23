@@ -1,15 +1,13 @@
-
+import ApiHandler from './api-handler';
 
 export default class Api {
 
 	static registerModule(apiMain) {
 		let apiProtected = apiMain.routerWithoutAuthentication;
-		apiProtected.route('/team')
-		.get((req, res) => {
-			res.send('team');
-		});
+		apiProtected.route('/club')
+		.get(ApiHandler.getClubs);
 
-		apiProtected.route('/test')
+		/*apiProtected.route('/test')
 		.get((req, res) => {
 			res.send('test');
 		});
@@ -17,9 +15,6 @@ export default class Api {
 		apiProtected.route('/test2')
 		.get((req, res) => {
 			res.send('test2');
-		});
-
-
+		});*/
 	} 
-
 }
