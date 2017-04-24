@@ -17,18 +17,15 @@ html {
 
 body {
  	font: 100% $font-stack;
-	color: $primary-color;
 }
 
 h2, h3, h4 {
-	color: $font-color;
 	padding: 0;
 	margin: 0;
 }
 
 .header-section {
 	width: auto;
-//background-color: red;
 }
 
 .navbar-login {
@@ -50,7 +47,6 @@ h2, h3, h4 {
 .content-section {
 	width:auto;
 	height: 80%;
-//border: solid 3px blue;
 	padding: 0;
 	margin-top: 10px;
 }
@@ -58,13 +54,11 @@ h2, h3, h4 {
 .advertisements-section {
 	width: auto;
 	height: 200px;	
-//background-color: red;
 }
 
 .create-championship-section {
 	width: auto;
 	height: 200px;	
-//background-color: green;
 }
 
 #access-icon {
