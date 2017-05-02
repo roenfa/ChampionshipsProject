@@ -42,4 +42,27 @@ export default class ApiHandler {
         });
     }
 	
+    static updatePlayer(req, res, next) {
+        playerAdapter.update(req.params.id, req.body)
+        .then((data) => {
+            res.json(data);
+        })
+        .catch((err) => {
+            next(err);
+        });
+    }
+
+    static deletePlayer(req, res, next) {
+        playerAdapter.remove({_id: req.params.id})
+        .then((data) => {
+            res.json({
+                message: 'The pplayer was removed sucessfully.',
+                data: data
+            })
+        })
+        .catch((err) => {
+            next(err);
+        });
+
+    }
 }

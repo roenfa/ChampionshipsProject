@@ -9,7 +9,10 @@ export default class Api {
 		.get(ApiHandler.getPlayers);
 
 		apiProtected.route('/players/:id')
-		.get(ApiHandler.findPlayerById);
+		.get(ApiHandler.findPlayerById)
+		.put(ApiHandler.updatePlayer)
+		.delete(ApiHandler.deletePlayer);
+
 	}
 
 

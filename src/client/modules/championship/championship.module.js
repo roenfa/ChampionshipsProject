@@ -1,5 +1,5 @@
 
-import TeamController from './championship.controller';
+import TeamController from './controllers/championship.controller';
 import CreateTeamController from './team/create/create-team.controller';
 import routertConfig from './championship.routes';
 let championshipModule = angular.module('championship', [

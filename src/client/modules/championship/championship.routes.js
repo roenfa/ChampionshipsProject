@@ -6,6 +6,13 @@ export default function routerConfig($stateProvider, $urlRouterProvider) {
 			url: 'team',
 			templateUrl: '/modules/championship/team/create/create-team.html',
 			controller: 'TeamController',
-			ControllerAs: 'team',
+			controllerAs: 'team',
+		})
+		.state('player', {
+			url: 'player',
+			templateUrl: '/modules/championship/player/create/create-player.html',
+			controlller: 'PlayerController',
+			controllerAs: 'player' 
+
 		})
 }
