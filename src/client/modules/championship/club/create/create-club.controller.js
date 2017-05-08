@@ -1,7 +1,7 @@
 /*club controller*/
 export default class ClubController 
 {
-	constructor($scope, $mdDialog) 
+	constructor($scope, $mdDialog, ClubService) 
 	{
 		$scope.club = 
 		{
@@ -29,5 +29,17 @@ export default class ClubController
       $scope.status = 'You didn\'t name your dog.';
     });
   };
+
+  $scope.register = function(item) {
+     ClubService.create(item, function() {
+        var club = {
+          name: item.name,
+          nationalidad: item.nationalidad
+        };
+      }, function(err) {
+        $scope.loading = false;
+        LocalError.request(err);
+      } );
+  } 
 	}
 }
