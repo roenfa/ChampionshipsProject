@@ -1,0 +1,27 @@
+{
+  "name": "Championship",
+  "description": "Championship",
+  "main": "server.js",
+  "authors": [
+    "Julio Cesar Quispe <julio.quispe@jalasoft.com>"
+  ],
+  "license": "MIT",
+  "homepage": "/client",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src/client/libs/"
+  ],
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-ui-router": "^0.4.2",
+    "angular-material": "^1.1.3",
+    "angular-material-icons": "^0.7.1",
+    "angular-file-upload": "^2.5.0",
+    "angular-resource": "^1.6.3",
+    "jquery": "^3.2.1"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "develop": {
+    "uri": "mongodb://localhost:27017",
+    "nameDataBase": "champion",
+    "options": {
+      "db": {
+        "native_parser": true
+      },
+      "server": {
+        "mongos": true,
+        "socketOptions": {
+          "keepAlive": 1,
+          "socketTimeoutMS": 5000
+        },
+        "poolSize": 5
+      }
+    }
+  }
+}

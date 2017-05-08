@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Championships Application</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+	<!-- Materialize CSS -->
+    <!--<link rel="stylesheet" href="/libs/materialize/materialize.min.css">-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/libs/angular-material/angular-material.css">
+    <!-- JavaScript for: jQuery, angular, materialize, and angular-materialize. All of which are needed. -->
+    <script type="text/javascript" src="/libs/angular/angular.min.js"></script>
+    <script src="/libs/angular-aria/angular-aria.js"></script>
+	<script src="/libs/angular-animate/angular-animate.js"></script>
+	<script src="/libs/angular-material/angular-material.js"></script>
+    <script type="text/javascript" src="/libs/angular-ui-router/release/angular-ui-router.js"></script>
+	<script type="text/javascript" src="/libs/jquery/dist/jquery.js"></script>
+
+  	<!-- libs -->
+    <script type="text/javascript" src="index.module.js"></script>
+</head>
+<body ng-app="appChampionship">
+	<md-toolbar class="md-hue-2">
+    <div class="md-toolbar-tools">
+      <!--<md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+        <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+      </md-button>-->
+
+      <h2 flex md-truncate>Create a Championship online</h2>
+
+    </div>
+  </md-toolbar>
+
+	<div ui-view>
+    <a ui-sref="hello">Test</a>
+        <a ui-sref="player">Player</a>
+    <a ui-sref="club">Club</a>
+  </div>
+</body>
+</html>
