@@ -1,8 +1,7 @@
 /*club controller*/
 export default class ClubController 
 {
-	constructor($scope, $mdDialog, ClubService) 
-	{
+	constructor($scope, $mdDialog) {
 		$scope.club = 
 		{
 			name: "",
@@ -30,16 +29,6 @@ export default class ClubController
     });
   };
 
-  $scope.register = function(item) {
-     ClubService.create(item, function() {
-        var club = {
-          name: item.name,
-          nationalidad: item.nationalidad
-        };
-      }, function(err) {
-        $scope.loading = false;
-        LocalError.request(err);
-      } );
-  } 
+   
 	}
 }
