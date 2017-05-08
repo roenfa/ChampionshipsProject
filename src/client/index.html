@@ -21,21 +21,20 @@
     <script type="text/javascript" src="index.module.js"></script>
 </head>
 <body ng-app="appChampionship">
-	<a ui-sref="hello">Test</a>
-    <a ui-sref="team">Team</a>
-    <a ui-sref="player">Player</a>
 	<md-toolbar class="md-hue-2">
-      <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
-          <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
-        </md-button>
+    <div class="md-toolbar-tools">
+      <!--<md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+        <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+      </md-button>-->
 
-        <h2 flex md-truncate>Create a Championship online</h2>
+      <h2 flex md-truncate>Create a Championship online</h2>
 
-      </div>
-    </md-toolbar>
+    </div>
+  </md-toolbar>
 
 	<div ui-view>
-    </div>
+    <a ui-sref="hello">Test</a>
+    <a ui-sref="club">Club</a>
+  </div>
 </body>
 </html>

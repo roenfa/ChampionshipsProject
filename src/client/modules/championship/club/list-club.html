@@ -1,0 +1,10 @@
+<md-list ng-controller="ClubController" ng-cloak>
+  <md-subheader class="md-no-sticky">List Clubs</md-subheader>
+  <md-list-item ng-repeat="person in people" ng-click="goToPerson(person.name, $event)" class="noright">
+    <img alt="{{ club.name }}" ng-src="{{ club.logo }}" class="md-avatar" />
+    <p>{{ club.name }}</p>
+  </md-list-item>
+</md-list>
+
+<md-button class="md-primary md-raised" ng-click="showPrompt($event)">Create Club</md-button>
+<md-button class="md-raised md-warn">Cancel</md-button>

@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import DbManager from './core/database';
-import Team from './modules/team';
+import Club from './modules/club';
 import Player from './modules/player';
 import path from 'path';
 import ErrorHandler from './core/utils/error-handler';
@@ -49,7 +49,7 @@ export default class App {
 			DbManager.connect()
 			.then((status) => {
 				this.registerMainApp(this.appServer);
-				Team.registerModule(this.mainRouter);	
+				Club.registerModule(this.mainRouter);	
 				Player.registerModule(this.mainRouter);
 				resolve('ok');
 			})
