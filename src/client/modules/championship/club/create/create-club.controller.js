@@ -1,8 +1,11 @@
 /*club controller*/
-export default class ClubController 
+export default class ClubController
 {
-	constructor($scope, $mdDialog) {
-		$scope.club = 
+	constructor($scope, $mdDialog, ClubService) {
+		'ngInject';
+		this.ClubService = ClubService;
+		console.log(ClubService);
+		$scope.club =
 		{
 			name: "",
 			nationalidad: "",
@@ -28,7 +31,8 @@ export default class ClubController
       $scope.status = 'You didn\'t name your dog.';
     });
   };
-
-   
+	}
+	static get $inject() {
+		return ['$scope', '$mdDialog', 'ClubService']
 	}
 }

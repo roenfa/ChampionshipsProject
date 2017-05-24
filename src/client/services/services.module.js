@@ -1,7 +1,9 @@
 import ClubService from './club.service';
+//import PlayersService from './player/player.rest.service.js';
 
-let servicesModule = angular.module('appChampionship.services', []);
+let appChampionshipServices = angular.module('appChampionshipServices', []);
 
-servicesModule.service('ClubService', ClubService);
-console.log('initialize servicesModule');
-export default servicesModule;
+appChampionshipServices.service('ClubService', ClubService);
+//servicesModule.service('PlayersService', PlayersService);
+
+export default appChampionshipServices;
