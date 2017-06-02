@@ -2,17 +2,20 @@ import AppController from './controllers/app.controller';
 import routerConfig from './app.routes';
 import championshipModule from './modules/championship/championship.module';
 import thirdPartyModules from './third-party.module';
-import services from './services/services.module';
-import service from './app.service';
+import ServiceRest from './common/service/service-rest.module';
+import config from './app.config';
+import constantModule from './app.constants';
 
-angular.module('appChampionship', [
+let appModule = angular.module('appChampionship', [
 	thirdPartyModules.name,
 	championshipModule.name,
-	services.name
-])
-	.controller('AppController', AppController)
+	constantModule.name,
+	'Common.Services.RestService'
+]);
+
+appModule.controller('AppController', AppController)
 	.config(routerConfig)
+	.config(config)
 	.config(['$qProvider', ($qProvider) => {
      $qProvider.errorOnUnhandledRejections(false);
- 	}])
- 	.factory('Global', service);
+ 	}]);

@@ -3,7 +3,7 @@
 export default class PlayerService {
   constructor(Restangular) {
       'ngInject';
-      console.log(Restangular)
+      console.log(Restangular);
       this.PlayerRest = Restangular.service("players");
   }
 
