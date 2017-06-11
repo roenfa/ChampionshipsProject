@@ -7,7 +7,7 @@ export default class ApiHandler
 {
 	static addClub(req, res, next) 
 	{
-		clubAdapter.insert(res.body)
+		clubAdapter.insert(req.body)
 		.then((data) => {
 			res.json({
 				message: "Club was added successful",
@@ -17,8 +17,9 @@ export default class ApiHandler
 		.catch((err) => {
 			if(err.message) 
 			{
-				err.status = HTTP_STATUS.BAD_REQUEST;
-				next(err);
+				console.log("error");
+                err.status = 500;
+                next(err);
 			}
 			else 
 			{
@@ -29,9 +30,42 @@ export default class ApiHandler
 
 	static getClubs(req, res, next) {
         console.log("request all clubs registered...");
-        debugger;
         clubAdapter.findAll({})
         .then((data) => { res.json(data) })
         .catch((err) => { next(err) });
+    }
+
+    static findClubById(req, res, next) {
+        clubAdapter.findOne({'_id': req.params.id})
+        .then((data) => {
+            res.json(data);        
+        })
+        .catch((error) => {
+            error.status = HTTP_STATUS.BAD_REQUEST;
+            next(error);
+        });
+    }
+	
+    static updateClub(req, res, next) {
+        clubAdapter.update(req.params.id, req.body)
+        .then((data) => {
+            res.json(data);
+        })
+        .catch((err) => {
+            next(err);
+        });
+    }
+
+    static deleteClub(req, res, next) {
+        clubAdapter.remove({_id: req.params.id})
+        .then((data) => {
+            res.json({
+                message: 'The club was removed sucessfully.',
+                data: data
+            })
+        })
+        .catch((err) => {
+            next(err);
+        });
     }
 }

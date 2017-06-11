@@ -4,17 +4,13 @@ export default class Api {
 
 	static registerModule(apiMain) {
 		let apiProtected = apiMain.routerWithoutAuthentication;
-		apiProtected.route('/club')
+		apiProtected.route('/clubs')
+		.post(ApiHandler.addClub)
 		.get(ApiHandler.getClubs);
 
-		/*apiProtected.route('/test')
-		.get((req, res) => {
-			res.send('test');
-		});
-
-		apiProtected.route('/test2')
-		.get((req, res) => {
-			res.send('test2');
-		});*/
+		apiProtected.route('/clubs/:id')
+		.get(ApiHandler.findClubById)
+		.put(ApiHandler.updateClub)
+		.delete(ApiHandler.deleteClub);
 	} 
 }
