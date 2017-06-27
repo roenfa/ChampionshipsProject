@@ -4,9 +4,9 @@ export default function routerConfig($stateProvider, $urlRouterProvider) {
 	$stateProvider
 		.state('player', {
 			url: 'player',
-			templateUrl: '/modules/championship/player/create/create-player.html',
-			controlller: 'PlayerController',
-			controllerAs: 'player' 
+			templateUrl: '/modules/championship/player/player.html',
+			controller: 'PlayerController',
+			controllerAs: 'playerCtrl'
 		})
 		.state('club', {
 			url: 'club',

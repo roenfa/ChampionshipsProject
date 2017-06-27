@@ -1,7 +1,9 @@
 let thirdPartyModules = angular.module('thirdPartyModules', [
     'ui.router',
     'ngMaterial',
-    'restangular'
+    'restangular',
+    'dataGrid',
+    'pagination'
 ]);
 
 export default thirdPartyModules;

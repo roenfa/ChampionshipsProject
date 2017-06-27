@@ -1,5 +1,3 @@
-
-
 export default class PlayerService {
   constructor(Restangular) {
       'ngInject';

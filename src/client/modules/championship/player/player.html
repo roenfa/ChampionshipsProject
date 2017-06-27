@@ -1,0 +1,38 @@
+<div>
+  Player List 2asd
+  <div grid-data grid-options="this.gridOptions" grid-actions="this.gridActions">
+     <!-- sample table layout goes below, but remember that you can you any mark-up here. -->
+
+     <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+        <thead>
+        <tr>
+            <th sortable="code" class="sortable mdl-data-table__cell--non-numeric">
+                <span>Position #</span>
+            </th>
+            <th sortable="placed" class="sortable">
+                <span>Number Player</span>
+            </th>
+            <th sortable='total.value' class="sortable">
+                <span>Name Player</span>
+            </th>
+            <th sortable='total.value' class="sortable">
+                <span>Puntaje</span>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr grid-item>
+            <td class="mdl-data-table__cell--non-numeric">
+                <span ng-bind="item.what"></span>
+            </td>
+            <td ng-bind="item.who"></td>
+
+            <td ng-bind="item.notes"></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+   </div>
+
+</div>
