@@ -8,6 +8,6 @@ export default class PlayerService {
   }
 
   getPlayers() {
-      return "dd"//this.PlayerRest.getList().$object;
+      return this.PlayerRest.getList();
   }
 }
