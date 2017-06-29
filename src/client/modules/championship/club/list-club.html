@@ -1,7 +1,7 @@
 <md-list ng-controller="ClubController" ng-cloak>
   <md-subheader class="md-no-sticky">List Clubs</md-subheader>
-  <md-list-item ng-repeat="person in people" ng-click="goToPerson(person.name, $event)" class="noright">
-    <img alt="{{ club.name }}" ng-src="{{ club.logo }}" class="md-avatar" />
+  <md-list-item ng-repeat="club in club.clubResources" class="noright">
+    <img alt="{{ club.name }}" ng-src="{{ club.name }}" class="md-avatar" />
     <p>{{ club.name }}</p>
   </md-list-item>
 </md-list>

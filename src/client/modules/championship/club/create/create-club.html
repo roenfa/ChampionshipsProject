@@ -4,7 +4,7 @@
   <md-card class="md-whiteframe-z2" flex="66">
   <md-content layout-padding>
     <form name="createClubForm" ng-submit="register(club)" ng-controller="ClubController">
-      <md-input-container class="md-icon-float md-block">
+      <md-input-container>
         <label>Name</label>
         <input name="clubName" ng-model="club.name" type="text">
         <div ng-messages="createClubForm.clubName.$error">
@@ -12,7 +12,7 @@
         </div>
       </md-input-container>
       
-      <md-input-container class="md-icon-float md-block">
+      <md-input-container>
         <label>Nationalidad</label>
         <input name="clubNationalidad" ng-model="club.nationalidad" type="text">
       </md-input-container>

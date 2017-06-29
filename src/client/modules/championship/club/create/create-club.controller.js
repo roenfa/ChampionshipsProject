@@ -1,9 +1,11 @@
 /*club controller*/
 export default class ClubController
 {
-	constructor($scope, $mdDialog, PlayerRest) {
-		this.ClubService = PlayerRest;
-		console.log('Controller Club', PlayerRest);
+	constructor($scope, $mdDialog, ClubRest) {
+
+		console.log("ClubRest: " + ClubRest);
+		$scope.clubResources = ClubRest;
+		
 		$scope.club =
 		{
 			name: "",
@@ -33,6 +35,6 @@ export default class ClubController
 	}
 
 	static get $inject() {
-		return ['$scope', '$mdDialog', 'PlayerRest']
+		return ['$scope', '$mdDialog', 'ClubRest']
 	}
 }
