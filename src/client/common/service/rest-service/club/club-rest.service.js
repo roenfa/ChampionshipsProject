@@ -4,11 +4,11 @@ export default class ClubService {
 
 	constructor(Restangular) {
     	'ngInject';
-      	console.log(Restangular);
       	this.ClubRest = Restangular.service("clubs");
   	}
 
   	getClubs() {
-		this.ClubRest.getList().$object;     		 
+  		console.log("get Clubssss....")
+		return this.ClubRest.getList().$object;     		 
   	}
 }

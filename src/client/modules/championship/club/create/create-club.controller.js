@@ -3,8 +3,8 @@ export default class ClubController
 {
 	constructor($scope, $mdDialog, ClubRest) {
 
-		console.log("ClubRest: " + ClubRest);
-		$scope.clubResources = ClubRest;
+		//console.log("ClubRest: " + ClubRest);
+		//$scope.clubResources = ClubRest;
 		
 		$scope.club =
 		{

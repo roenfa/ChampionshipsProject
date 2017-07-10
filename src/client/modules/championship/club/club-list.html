@@ -1,7 +1,6 @@
-<md-list ng-controller="ClubController" ng-cloak>
+<md-list ng-controller="ClubListController" ng-cloak>
   <md-subheader class="md-no-sticky">List Clubs</md-subheader>
-  <md-list-item ng-repeat="club in club.clubResources" class="noright">
-    <img alt="{{ club.name }}" ng-src="{{ club.name }}" class="md-avatar" />
+  <md-list-item ng-repeat="club in clubResources" class="noright">
     <p>{{ club.name }}</p>
   </md-list-item>
 </md-list>

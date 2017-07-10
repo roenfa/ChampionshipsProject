@@ -1,11 +1,11 @@
 
 
-import ClubController from './club/create/create-club.controller';
+import ClubListController from './club/club-list.controller';
 import routertConfig from './championship.routes';
 let championshipModule = angular.module('championship', [
 
 ]);
 championshipModule.config(routertConfig);
-championshipModule.controller('ClubController', ClubController);
+championshipModule.controller('ClubListController', ClubListController);
 
 export default championshipModule;

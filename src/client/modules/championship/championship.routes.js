@@ -8,10 +8,15 @@ export default function routerConfig($stateProvider, $urlRouterProvider) {
 			controlller: 'PlayerController',
 			controllerAs: 'player' 
 		})
-		.state('club', {
-			url: 'club',
-			templateUrl: '/modules/championship/club/list-club.html',
-			controller: 'ClubController',
-			ControllerAs: 'club',
+		.state('clubs', {
+			url: 'clubs',
+			templateUrl: '/modules/championship/club/club-list.html',
+			resolve:{
+                clubResources: ['ClubRest', function(ClubRest) {
+                    return ClubRest.getClubs();
+                }]
+            },
+			controller: 'ClubListController',
+			ControllerAs: 'clubList',
 		})
 }

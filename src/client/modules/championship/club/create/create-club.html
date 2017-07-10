@@ -19,7 +19,8 @@
 
       <md-input-container>
         <label for="picture">Upload logo without resizing.</label>
-        <input id="picture" label="Upload Images" name="picture" ngf-select="upload($file)" ng-model="picture" accept="image/*" ngf-max-size="5MB" ngf-validate="{width: {min: 1400, max:2000}, height: {min: 630, max: 900}}">
+        <!--<input id="picture" label="Upload Images" name="picture" ngf-select="upload($file)" ng-model="picture" accept="image/*" ngf-max-size="5MB" ngf-validate="{width: {min: 1400, max:2000}, height: {min: 630, max: 900}}">-->
+        
         <div ng-messages="createClubPageForm.picture.$error">
           <div ng-message="minWidth">
             Min Width has to be 1400.
